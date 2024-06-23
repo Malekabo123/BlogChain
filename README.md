@@ -1,6 +1,6 @@
 # BlogChain
 
-A blog App developed using various techs:
+A blog app developed using various techs:
 -ReactJS
 -Css
 -Firebase Authentication
