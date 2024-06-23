@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+}
+
+ul,
+h1,
+h2,
+h3,
+p,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.main {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 2rem;
+  display: flex;
+}
+
+.previewQuill > .ql-container {
+  min-height: auto;
+}
+
+.ql-container {
+  min-height: 30vh;
+  display: flex;
+  font-size: 18px !important;
+}
+
+.ql-editor {
+  min-width: 100%;
+}
+
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  border: 1px solid #27272a !important;
+}
+
+.error > .ql-toolbar.ql-snow,
+.error > .ql-container.ql-snow {
+  border-color: tomato !important;
+}
+
+.ql-toolbar.ql-snow {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.ql-container.ql-snow {
+  border-top: 0 !important;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.quill > .ql-container > .ql-editor.ql-blank::before {
+  font-size: 16px;
+  color: #999;
+}
+
+.ql-container.ql-disabled .ql-tooltip {
+  display: none;
+}
+
+.ql-tooltip {
+  background-color: #353434c7;
+  box-shadow: 0px 0px 5px #57553c;
+  color: #fff;
+  border: 0;
+  left: 0 !important;
+  font-size: 13px !important;
+}
+
+.ql-tooltip > input {
+  border: 0;
+  background-color: #575757;
+  color: #e9e9e9;
+  outline: none;
+}
+
+.ql-tooltip > .ql-action {
+  color: #e9e9e9;
+}
+
+.error > .css-2tcwtq-control {
+  border-color: tomato !important;
+}
+
+@media (max-width: 1050px) {
+  .main {
+    margin-top: 1rem;
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 650px) {
+  .main {
+    margin-top: 0;
+    padding: 1rem;
+  }
+
+  .ql-container {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 370px) {
+  .ql-tooltip {
+    overflow: hidden;
+  }
+  .ql-tooltip > input {
+    width: 55% !important;
+  }
+}

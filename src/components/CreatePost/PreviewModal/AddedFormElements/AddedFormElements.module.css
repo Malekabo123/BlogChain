@@ -1,0 +1,47 @@
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.content > div {
+  width: 60%;
+  font-size: 1.2rem;
+}
+
+.blogImg {
+  max-width: 60%;
+}
+
+.imgContainer {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .content > div {
+    width: 80%;
+  }
+
+  .blogImg {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .content > div {
+    width: 95%;
+  }
+
+  .imgContainer {
+    padding: 0;
+  }
+
+  .blogImg {
+    max-width: 95%;
+  }
+}

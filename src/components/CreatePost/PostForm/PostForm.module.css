@@ -1,0 +1,67 @@
+.postForm {
+  width: 65%;
+  padding: 0.7rem;
+  overflow-y: scroll;
+}
+
+.postForm::-webkit-scrollbar {
+  width: 5px;
+}
+
+.postForm::-webkit-scrollbar-thumb {
+  background-color: #363130;
+}
+
+.postForm > input,
+.postForm > textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #27272a;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: none;
+}
+
+.postForm > input:focus-visible,
+.postForm > textarea:focus-visible {
+  outline: 1px solid #e04202;
+}
+
+.postForm > textarea::-webkit-scrollbar {
+  width: 5px;
+}
+
+.postForm > textarea::-webkit-scrollbar-thumb {
+  background-color: #363130;
+}
+
+.addMedia {
+  background-color: transparent;
+  border: 1px solid #27272a;
+  border-radius: 25px;
+  padding: 4px 12px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.margin {
+  margin-right: 0.9rem;
+}
+
+/* hover effect just for pointing devices like mouse */
+@media (hover: hover), (-ms-high-contrast: none) {
+  .addMedia:hover {
+    background-color: #27272a;
+  }
+}
+
+@media (max-width: 800px) {
+  .postForm {
+    width: 100%;
+    overflow-y: visible;
+  }
+}

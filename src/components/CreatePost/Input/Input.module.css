@@ -1,0 +1,22 @@
+.input {
+  margin-bottom: 1rem;
+}
+
+.input > input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #27272a;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 1rem;
+  resize: none;
+}
+
+.input > input:focus-visible {
+  outline: 1px solid #e04202;
+}
+
+.error {
+  border-color: tomato !important;
+}

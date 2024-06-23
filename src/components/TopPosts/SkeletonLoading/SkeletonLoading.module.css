@@ -1,0 +1,49 @@
+.skeletonLoading {
+  display: flex;
+  justify-content: space-between;
+  height: 14rem;
+  margin-bottom: 3rem;
+}
+
+.emptyImg {
+  width: 40%;
+}
+
+.emptyImg > span {
+  width: 100%;
+  height: 100% !important;
+}
+
+.emptyContent {
+  width: 55%;
+}
+
+.emptyContent > span:first-child {
+  width: 60%;
+  margin-bottom: 2rem;
+}
+
+.emptyUser {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.emptyUser > span:last-child {
+  width: 30%;
+  margin-left: 2rem;
+}
+
+@media (max-width: 450px) {
+  .skeletonLoading {
+    height: 10rem;
+  }
+
+  .emptyContent > span:first-child {
+    margin-bottom: 0.3rem;
+  }
+
+  .emptyUser {
+    margin-top: 1rem;
+  }
+}

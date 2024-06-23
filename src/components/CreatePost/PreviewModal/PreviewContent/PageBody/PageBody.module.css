@@ -1,0 +1,285 @@
+.previewContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.previewContent::-webkit-scrollbar {
+  width: 5px;
+}
+
+.previewContent::-webkit-scrollbar-thumb {
+  background-color: #b3aaa9;
+}
+
+.category {
+  width: max-content;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  background-color: #e2dcdb;
+  padding: 4px 18px;
+  color: #333;
+  border: 0;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.title {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title > h1 {
+  width: 75%;
+}
+
+.title > h2 {
+  width: 60%;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.userBar {
+  width: 60%;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.userBar button {
+  border: 0;
+  background-color: transparent;
+  padding: 8px 16px;
+  box-shadow: 0px 4px 17px 0px rgba(204, 182, 204, 1);
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: tomato;
+  border: 1px solid tomato;
+}
+
+.userBar button:last-of-type:hover {
+  background-color: tomato;
+  color: white;
+}
+
+.userBar button:first-of-type {
+  color: #176589;
+  border: 1px solid #176589;
+}
+
+.userBar button:first-of-type:hover {
+  background-color: #176589;
+  color: white;
+}
+
+.user {
+  display: flex;
+  gap: 1rem;
+}
+
+.like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.like:hover {
+  transform: scale(1.1);
+}
+
+.swapIn {
+  font-size: 1.3rem;
+  color: tomato;
+  margin-right: 10px;
+  transform: translateY(0);
+  animation: pulse-animation 0.2s ease-out;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: translateY(200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.border {
+  width: 60%;
+  min-height: 1px;
+  background-color: #dbd4d4;
+  margin-inline: auto;
+}
+
+.imgContainer {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cover {
+  max-width: 100%;
+  width: auto;
+  max-height: 100%;
+}
+
+.cover {
+  --b: 10px; /* thickness of the border */
+  --c: #ffa559; /* color of the border */
+  --w: 150px; /* width of border */
+
+  border: var(--b) solid #0000; /* space for the border */
+  --_g: #0000 90deg, var(--c) 0;
+  --_p: var(--w) var(--w) border-box no-repeat;
+  background: conic-gradient(
+        from 180deg at top var(--b) right var(--b),
+        var(--_g)
+      )
+      100% 0 / var(--_p),
+    conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--_g)) 0 100% /
+      var(--_p);
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.content > div {
+  width: 60%;
+}
+
+.actions {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.publishButton,
+.backButton {
+  border: 0;
+  width: fit-content;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #e04202;
+  padding: 8px 30px;
+  font-size: 1.1rem;
+}
+
+.backButton {
+  background-color: #27272a;
+  padding: 8px 14px;
+}
+
+.publishButton:hover {
+  background-color: #ac3405;
+}
+
+.backButton:hover {
+  background-color: #1b1b1d;
+}
+
+@media (max-width: 800px) {
+  .category {
+    font-size: 1.3rem;
+  }
+
+  .title > h1 {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+
+  .title > h2 {
+    font-size: 1.5rem;
+    width: 70%;
+  }
+
+  .userBar,
+  .border {
+    width: 80%;
+  }
+
+  .content > div {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .previewContainer,
+  .fullPostPage {
+    padding: 1rem;
+  }
+
+  .category {
+    font-size: 1rem;
+  }
+
+  .title > h1 {
+    font-size: 1.8rem;
+  }
+
+  .title > h2 {
+    font-size: 1.1rem;
+    width: 90%;
+  }
+
+  .like:hover {
+    transform: scale(1);
+  }
+
+  .userBar,
+  .border {
+    width: 100%;
+  }
+
+  .userBar button {
+    font-size: 1rem;
+  }
+
+  .userBar button:first-of-type {
+    margin-left: 1rem;
+  }
+
+  .userBar button:last-of-type {
+    margin-right: 1rem;
+  }
+
+  .border {
+    margin-bottom: 2rem;
+  }
+
+  .imgContainer {
+    padding: 0;
+  }
+
+  .cover {
+    --b: 6px; /* thickness of the border */
+    --w: 80px; /* width of border */
+  }
+
+  .content > div {
+    width: 95%;
+  }
+
+  .nameNdate span {
+    display: block;
+  }
+}

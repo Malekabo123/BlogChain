@@ -1,0 +1,123 @@
+.profile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 3rem;
+}
+
+.userInfoContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
+}
+
+.profileBody {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profileBody > p {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.border {
+  margin: 0;
+  margin-inline: 3rem;
+}
+
+.userInfoContainer p {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.userInfoContainer p:last-of-type {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #636c76;
+}
+
+.imgContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgContainer img {
+  border-radius: 50%;
+}
+
+.avatar {
+  height: 200px !important;
+  width: 200px !important;
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.editProfile {
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 0;
+  width: max-content;
+  cursor: pointer;
+  background-color: #3c4043;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.actions button:last-of-type {
+  background-color: tomato;
+}
+
+.editProfile:hover {
+  background-color: #576875;
+}
+
+.actions button:last-of-type:hover {
+  background-color: rgb(182, 45, 20);
+}
+
+@media (max-width: 1050px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .border {
+    display: none;
+  }
+
+  .actions {
+    flex-direction: row;
+  }
+
+  .userInfoContainer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile {
+    padding: 1.5rem;
+  }
+
+  .profileBody {
+    padding: 0;
+  }
+
+  .actions {
+    margin-bottom: 2rem;
+  }
+}

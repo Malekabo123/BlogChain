@@ -1,0 +1,104 @@
+.overlay {
+  position: fixed;
+  top: 10vh;
+  left: 30%;
+  width: 40%;
+  height: 85vh;
+  z-index: 100;
+  border-radius: 20px;
+  background: #eee;
+  padding: 2em;
+  overflow: hidden;
+}
+
+.previewContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.previewContainer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.previewContainer::-webkit-scrollbar-thumb {
+  background-color: #b3aaa9;
+}
+
+.previewContainer > h1,
+.previewContainer > div {
+  margin-bottom: 2rem;
+}
+
+.previewContainer > div:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.previewContainer button {
+  border: 0;
+  background-color: transparent;
+  padding: 8px 16px;
+  box-shadow: 0px 4px 17px 0px rgba(204, 182, 204, 1);
+  border-radius: 25px;
+  font-size: 1.1rem;
+  color: #1a8917;
+  cursor: pointer;
+}
+
+.previewContainer label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.previewContainer input,
+.previewContainer textarea {
+  width: 95%;
+  border-radius: 10px;
+  outline: 0;
+  font-size: 1.2rem;
+  border: 1px solid transparent;
+  padding: 1rem;
+  background-color: #e1d5d4;
+}
+
+.previewContainer input:focus-visible {
+  border-color: black;
+}
+
+.previewContainer textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.previewContainer textarea::-webkit-scrollbar-thumb {
+  background-color: #b3aaa9;
+}
+
+.previewContainer > div:last-of-type {
+  display: flex;
+  align-items: center;
+  padding-inline: 2rem;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.previewContainer > div:last-of-type > button:first-of-type {
+  color: tomato;
+  border: 1px solid tomato;
+}
+
+.previewContainer > div:last-of-type > button:first-of-type:hover {
+  background-color: tomato;
+  color: white;
+}
+
+.previewContainer > div:last-of-type > button:last-of-type {
+  border: 1px solid #1a8917;
+}
+
+.previewContainer > div:last-of-type > button:last-of-type:hover {
+  background-color: #1a8917;
+  color: white;
+}

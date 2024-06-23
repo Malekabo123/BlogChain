@@ -1,0 +1,27 @@
+.topPosts {
+  width: 60%;
+  padding: 2rem;
+}
+
+.topPosts > h1 {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1050px) {
+  .topPosts {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .topPosts {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .topPosts {
+    padding: 0;
+  }
+}

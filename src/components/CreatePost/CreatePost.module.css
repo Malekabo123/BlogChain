@@ -1,0 +1,122 @@
+.createPost {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #363130;
+  display: flex;
+  position: relative;
+}
+
+.postContainer {
+  margin: 1rem auto;
+  width: 80%;
+  max-height: calc(100vh - 2rem);
+  background-color: #09090b;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  color: #eaeaea;
+}
+
+.postContainer > h2 {
+  padding: 0.7rem;
+  font-weight: normal;
+  border-bottom: 2px solid #27272a;
+}
+
+.postForm {
+  flex-grow: 1;
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column;
+}
+
+.postForm::-webkit-scrollbar {
+  width: 0;
+}
+
+.postBody {
+  flex-grow: 1;
+  overflow-y: scroll;
+  display: flex;
+}
+
+.postBody::-webkit-scrollbar {
+  width: 0;
+}
+
+.footer {
+  border-top: 2px solid #27272a;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer > div:last-child {
+  width: 35%;
+  border-left: 2px solid #27272a;
+}
+
+.footer > div {
+  padding: 0.7rem;
+}
+
+.button,
+.discard > a {
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.discard {
+  display: flex;
+  width: 65%;
+}
+
+.discard > a {
+  padding: 8px 14px;
+  align-self: center;
+  background-color: #27272a;
+  text-decoration: none;
+  font-size: 13.3px;
+}
+
+.button {
+  background-color: #e04202;
+  padding: 8px 40px;
+  float: right;
+}
+
+.discard > a:hover {
+  background-color: #1b1b1d;
+}
+
+.button:hover {
+  background-color: #ac3405;
+}
+
+@media (max-width: 800px) {
+  .postContainer {
+    width: 95%;
+  }
+
+  .postBody {
+    flex-direction: column-reverse;
+  }
+
+  .postBody::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .postBody::-webkit-scrollbar-thumb {
+    background-color: #363130;
+  }
+
+  .footer > div:last-child {
+    width: auto;
+    border-left: 0;
+  }
+
+  .discard {
+    width: auto;
+  }
+}

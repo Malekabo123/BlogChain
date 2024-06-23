@@ -1,0 +1,41 @@
+.coverImage {
+  width: 35%;
+  padding: 0.7rem;
+  border-left: 2px solid #27272a;
+}
+
+.coverImage > p {
+  margin-bottom: 1rem;
+}
+
+.coverImage > img {
+  border-radius: 25px;
+}
+
+.coverImage > div > button {
+  margin-top: 1rem;
+}
+
+@media (max-width: 800px) {
+  .coverImage {
+    width: 100%;
+    border: 0;
+  }
+
+  .coverImage > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .coverImage > div > button {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 0.9rem;
+  }
+
+  .coverImage > div > span {
+    font-size: 0.9rem;
+  }
+}

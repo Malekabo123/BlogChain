@@ -1,0 +1,38 @@
+.trends {
+  padding: 2rem;
+}
+
+.trendsHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.trendsHeader > div {
+  border: 1px solid #333;
+  border-radius: 50%;
+  padding: 2px 5px 2px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1050px) {
+  .trendsHeader {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 1050px) and (min-width: 651px) {
+  .trendList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 650px) {
+  .trends {
+    padding: 1rem;
+  }
+}

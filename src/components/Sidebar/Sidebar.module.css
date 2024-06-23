@@ -1,0 +1,44 @@
+.sidebarContainer {
+  width: 40%;
+  position: relative;
+}
+
+.sidebar {
+  border: 1px solid #e2e0e0;
+  border-radius: 25px;
+}
+
+.border {
+  width: 90%;
+  height: 2px;
+  background-color: #f2f2f2;
+  margin: auto;
+}
+
+.frieren {
+  padding: 2rem;
+  position: sticky;
+  top: 20%;
+}
+
+.frieren > img {
+  border-radius: 25px;
+}
+
+@media (max-width: 1050px) {
+  .sidebarContainer {
+    width: 100%;
+  }
+  .sidebar {
+    border: 0;
+  }
+
+  .border {
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+  }
+
+  .frieren {
+    display: none;
+  }
+}

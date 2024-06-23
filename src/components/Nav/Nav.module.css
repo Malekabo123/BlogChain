@@ -1,0 +1,100 @@
+.header,
+.logo,
+.navs {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  padding: 0.6rem 5rem;
+  justify-content: space-between;
+  background-color: #f6c909;
+  border-bottom: 1px solid #111;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.logo {
+  gap: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111;
+  text-decoration: none;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.navs {
+  gap: 1rem;
+}
+
+.navs a,
+.navs button {
+  color: #111;
+  padding: 0.3rem 1rem;
+  border-radius: 35px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+}
+
+.navs li:last-child > a {
+  display: flex;
+}
+
+.navs button {
+  background-color: #f6c909;
+  cursor: pointer;
+  border: 0;
+}
+
+.navs a:hover,
+.navs button:hover,
+.navs a.active,
+.navs button:active {
+  background-color: #111;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .header {
+    padding-inline: 2rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .header {
+    padding-inline: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .navs {
+    gap: 0.7rem;
+  }
+
+  .navs a,
+  .navs button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .navs {
+    gap: 0;
+  }
+
+  .navs a {
+    padding: 0.3rem;
+  }
+}

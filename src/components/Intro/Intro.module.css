@@ -1,0 +1,99 @@
+.intro {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #111;
+}
+
+.intro > div {
+  flex: 1 1 0;
+  text-align: center;
+}
+
+.intro > div:not(:last-child) {
+  font-weight: bold;
+  font-size: 5.5vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.yellow {
+  color: #f6c909;
+  opacity: 0;
+  animation: shows 1ms forwards 1s;
+}
+
+.disciplineBlack {
+  color: #f6c909;
+  background-color: #111;
+}
+
+.hideFern {
+  opacity: 0;
+}
+
+.slideFern {
+  transform: translateX(-100%);
+  animation: slide 5s forwards;
+}
+
+.fern {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.fern > img {
+  width: 70%;
+}
+
+@keyframes shows {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(-40%);
+  }
+}
+
+@media (max-width: 650px) {
+  .intro {
+    flex-direction: column;
+  }
+
+  .intro > div:first-child {
+    font-size: 7vw;
+  }
+
+  .intro > div:nth-child(2) {
+    font-size: 9vw;
+  }
+
+  .fern > img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 360px) {
+  .intro > div:first-child {
+    font-size: 8.5vw;
+  }
+
+  .intro > div:nth-child(2) {
+    font-size: 12vw;
+  }
+}
