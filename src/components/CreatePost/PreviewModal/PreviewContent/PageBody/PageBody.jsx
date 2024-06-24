@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styles from "./PageBody.module.css";
 import { calculatePublishDate } from "../../../../../store/calculatePublishDate";
 import { calculateEstimatedReadingTime } from "../../../../../store/calculateEstimatedReadingTime";
@@ -90,6 +91,7 @@ function PageBody({
                 )}
               </>
             )}
+            {!userInfo.isLoggedIn && <FaHeart size={30} color="tomato" />}
           </div>
         )}
       </div>

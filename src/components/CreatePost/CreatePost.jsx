@@ -1,4 +1,4 @@
-import { Form, Link, redirect, useNavigate } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import styles from "./CreatePost.module.css";
 import PostForm from "./PostForm/PostForm";
 import CoverImage from "./CoverImage/CoverImage";
@@ -46,7 +46,7 @@ function CreatePost() {
     //filter the contents and images that ends with a number and add them as an array
     //this way they will be sorted here to show them later in the same order they were uploaded
     const otherElements = Object.entries(data)
-      .filter(([key, value]) => /^(content|img)\d+$/.test(key))
+      .filter(([key]) => /^(content|img)\d+$/.test(key))
       .map(([key, value]) => ({ [key]: value }));
 
     const modifiedData = {
@@ -72,7 +72,7 @@ function CreatePost() {
     }
 
     const size = calculateObjectSize(modifiedData);
-    console.log(size);
+    //console.log(size);
     if (size > 1000000) {
       alert(
         "Post size exceeded the allowed size, please use lower quality images"
@@ -116,6 +116,7 @@ function CreatePost() {
 
 export default CreatePost;
 
+// eslint-disable-next-line no-empty-pattern
 export async function action({}) {
   return null;
 }

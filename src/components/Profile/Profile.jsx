@@ -32,55 +32,40 @@ function Profile() {
       let fetchedUsers = [];
 
       //fetch my posts
-      try {
-        ({ dataToReturn: fetchedMyPosts } = await firebaseFetch(
-          "posts",
-          "email",
-          "==",
-          userInfo.email,
-          false,
-          true,
-          true,
-          false
-        ));
-      } catch (error) {
-        console.log(error);
-        throw new Error(error);
-      }
+      ({ dataToReturn: fetchedMyPosts } = await firebaseFetch(
+        "posts",
+        "email",
+        "==",
+        userInfo.email,
+        false,
+        true,
+        true,
+        false
+      ));
 
       //fetch posts I liked
-      try {
-        ({ dataToReturn: fetchedLikedPosts } = await firebaseFetch(
-          "posts",
-          "likes",
-          "array-contains",
-          userInfo.email,
-          false,
-          true,
-          true,
-          false
-        ));
-      } catch (error) {
-        console.log(error);
-        throw new Error(error);
-      }
+      ({ dataToReturn: fetchedLikedPosts } = await firebaseFetch(
+        "posts",
+        "likes",
+        "array-contains",
+        userInfo.email,
+        false,
+        true,
+        true,
+        false
+      ));
 
       //fetch user info for liked posts creator
-      try {
-        ({ dataToReturn: fetchedUsers } = await firebaseFetch(
-          "users",
-          "",
-          "",
-          "",
-          true,
-          true,
-          false,
-          false
-        ));
-      } catch (error) {
-        console.log(error);
-        throw new Error(error);
-      }
+      ({ dataToReturn: fetchedUsers } = await firebaseFetch(
+        "users",
+        "",
+        "",
+        "",
+        true,
+        true,
+        false,
+        false
+      ));
 
       fetchedLikedPosts = fetchedLikedPosts.map((post) => {
         const userInfo = fetchedUsers.find((user) => user.email === post.email);

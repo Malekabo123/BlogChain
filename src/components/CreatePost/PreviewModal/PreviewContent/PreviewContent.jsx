@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styles from "./PreviewContent.module.css";
 import {
   collection,
@@ -41,49 +42,37 @@ function PreviewContent({ formData, triggerPreview, isFullPost }) {
   useEffect(() => {
     const fetchPost = async () => {
       setLoadingPage(true);
-      console.log("here");
       let fetchedPost = {};
       let fetchedUserDetails = {};
       let docRef, newLikes, docRef2, newLikedPost;
 
       //get ref and data for this post to render the post and calculate likes
-      try {
-        ({ dataToReturn: fetchedPost, refToReturn: docRef } =
-          await firebaseFetch(
-            "posts",
-            "id",
-            "==",
-            postId,
-            false,
-            false,
-            true,
-            true
-          ));
-        setPost(fetchedPost);
-        newLikes = fetchedPost.likes;
-      } catch (error) {
-        console.log(error);
-        throw new Error(error);
-      }
+      ({ dataToReturn: fetchedPost, refToReturn: docRef } = await firebaseFetch(
+        "posts",
+        "id",
+        "==",
+        postId,
+        false,
+        false,
+        true,
+        true
+      ));
+      setPost(fetchedPost);
+      newLikes = fetchedPost.likes;
 
       //get user details that created the liked post
-      try {
-        ({ dataToReturn: fetchedUserDetails } = await firebaseFetch(
-          "users",
-          "email",
-          "==",
-          fetchedPost.email,
-          false,
-          false,
-          true,
-          false
-        ));
-        const { avatar, name } = fetchedUserDetails;
-        setUserDetails({ avatar, name });
-      } catch (error) {
-        console.log(error);
-        throw new Error(error);
-      }
+      ({ dataToReturn: fetchedUserDetails } = await firebaseFetch(
+        "users",
+        "email",
+        "==",
+        fetchedPost.email,
+        false,
+        false,
+        true,
+        false
+      ));
+      const { avatar, name } = fetchedUserDetails;
+      setUserDetails({ avatar, name });
 
       if (!userInfo.userInfo.email) {
         setUpdateDocDependencies({ likesNumber: newLikes.length });
@@ -91,23 +80,18 @@ function PreviewContent({ formData, triggerPreview, isFullPost }) {
         return;
       }
       //get current user info to update like status
-      try {
-        ({ dataToReturn: newLikedPost, refToReturn: docRef2 } =
-          await firebaseFetch(
-            "users",
-            "email",
-            "==",
-            userInfo.userInfo.email,
-            false,
-            false,
-            true,
-            true
-          ));
-        newLikedPost = newLikedPost.likedPosts;
-      } catch (error) {
-        console.log(error);
-        throw new Error(error);
-      }
+      ({ dataToReturn: newLikedPost, refToReturn: docRef2 } =
+        await firebaseFetch(
+          "users",
+          "email",
+          "==",
+          userInfo.userInfo.email,
+          false,
+          false,
+          true,
+          true
+        ));
+      newLikedPost = newLikedPost.likedPosts;
 
       if (newLikes.includes(userInfo.userInfo.email)) {
         setIsLiked(true);

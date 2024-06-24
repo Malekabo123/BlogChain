@@ -50,7 +50,6 @@ function PostForm({ formIsSubmitted, postData }) {
       { type: type, id: Math.random().toString(), image: null },
     ]);
   };
-  console.log(elementsArray);
 
   //uploading image by the user, and reduce the quality
   const handleImageChange = (id, event) => {
@@ -121,7 +120,6 @@ function PostForm({ formIsSubmitted, postData }) {
 
   //remove text or img element from the post
   const removeElement = (id, content) => {
-    console.log(id, content);
     setElementsArray(elementsArray.filter((element) => element.id !== id));
   };
 

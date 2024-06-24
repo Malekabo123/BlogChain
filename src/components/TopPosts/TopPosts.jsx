@@ -54,21 +54,16 @@ export default TopPosts;
 async function loadPosts() {
   //get every document in the posts collection from firebase
   let posts = [];
-  try {
-    ({ dataToReturn: posts } = await firebaseFetch(
-      "posts",
-      "email",
-      "==",
-      "user",
-      true,
-      true,
-      false,
-      false
-    ));
-  } catch (error) {
-    console.log(error);
-    throw new Error(error);
-  }
+  ({ dataToReturn: posts } = await firebaseFetch(
+    "posts",
+    "email",
+    "==",
+    "user",
+    true,
+    true,
+    false,
+    false
+  ));
 
   //get users email
   const usersSet = new Set();
@@ -82,22 +77,17 @@ async function loadPosts() {
   let fetchedUsers = [];
 
   for (const user of users) {
-    try {
-      ({ dataToReturn: fetchedUser } = await firebaseFetch(
-        "users",
-        "email",
-        "==",
-        user,
-        false,
-        false,
-        true,
-        false
-      ));
-      fetchedUsers.push(fetchedUser);
-    } catch (error) {
-      console.log(error);
-      throw new Error(error);
-    }
+    ({ dataToReturn: fetchedUser } = await firebaseFetch(
+      "users",
+      "email",
+      "==",
+      user,
+      false,
+      false,
+      true,
+      false
+    ));
+    fetchedUsers.push(fetchedUser);
   }
 
   return { posts, fetchedUsers };

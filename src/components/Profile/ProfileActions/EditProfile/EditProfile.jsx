@@ -52,23 +52,18 @@ function EditProfile({ closeModal }) {
 
     //get ref of user from firebase that their info is being updated
     const updateUserInfo = async () => {
-      try {
-        let docRef;
-        ({ refToReturn: docRef } = await firebaseFetch(
-          "users",
-          "email",
-          "==",
-          userInfo.email,
-          false,
-          false,
-          false,
-          true
-        ));
-        updateDoc(docRef, updatedInfo);
-      } catch (error) {
-        console.log(error);
-        throw new Error(error);
-      }
+      let docRef;
+      ({ refToReturn: docRef } = await firebaseFetch(
+        "users",
+        "email",
+        "==",
+        userInfo.email,
+        false,
+        false,
+        false,
+        true
+      ));
+      updateDoc(docRef, updatedInfo);
     };
     updateUserInfo();
     dispatch(isLoggedInActions.addUserInfo(updatedInfo));

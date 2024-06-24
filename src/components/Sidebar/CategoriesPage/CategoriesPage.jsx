@@ -20,21 +20,16 @@ function CategoriesPage() {
 
       //get posts for the choosen category
       let fetchedCategoryPosts = [];
-      try {
-        ({ dataToReturn: fetchedCategoryPosts } = await firebaseFetch(
-          "posts",
-          "category",
-          "==",
-          params.category,
-          false,
-          true,
-          true,
-          false
-        ));
-      } catch (error) {
-        console.log(error);
-        throw new Error(error);
-      }
+      ({ dataToReturn: fetchedCategoryPosts } = await firebaseFetch(
+        "posts",
+        "category",
+        "==",
+        params.category,
+        false,
+        true,
+        true,
+        false
+      ));
 
       //users email from fetched posts
       const usersSet = new Set();
@@ -48,22 +43,17 @@ function CategoriesPage() {
       let fetchedUsers = [];
 
       for (const user of users) {
-        try {
-          ({ dataToReturn: fetchedUser } = await firebaseFetch(
-            "users",
-            "email",
-            "==",
-            user,
-            false,
-            false,
-            true,
-            false
-          ));
-          fetchedUsers.push(fetchedUser);
-        } catch (error) {
-          console.log(error);
-          throw new Error(error);
-        }
+        ({ dataToReturn: fetchedUser } = await firebaseFetch(
+          "users",
+          "email",
+          "==",
+          user,
+          false,
+          false,
+          true,
+          false
+        ));
+        fetchedUsers.push(fetchedUser);
       }
 
       setPosts(fetchedCategoryPosts);

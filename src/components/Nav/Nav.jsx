@@ -29,7 +29,7 @@ function Nav() {
 
         let fetchedUser = {};
 
-        //add user to firebase if he isn't already added
+        //add user to firebase if they aren't already added
         const addUser = async () => {
           try {
             const collectionRef = collection(db, "users");
@@ -42,21 +42,16 @@ function Nav() {
 
         //check if user info is already in firebase
         const fetchUser = async () => {
-          try {
-            ({ dataToReturn: fetchedUser } = await firebaseFetch(
-              "users",
-              "email",
-              "==",
-              user.email,
-              false,
-              false,
-              true,
-              false
-            ));
-          } catch (error) {
-            console.log(error);
-            throw new Error(error);
-          }
+          ({ dataToReturn: fetchedUser } = await firebaseFetch(
+            "users",
+            "email",
+            "==",
+            user.email,
+            false,
+            false,
+            true,
+            false
+          ));
 
           if (Object.keys(fetchedUser).length === 0) {
             addUser();
