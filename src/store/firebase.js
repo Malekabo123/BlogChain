@@ -11,7 +11,7 @@ const firebaseConfig = {
   storageBucket: "******",
   messagingSenderId: "******",
   appId: "******",
-  measurementId: "******",
+  measurementId: "*******",
 };
 
 const app = initializeApp(firebaseConfig);
