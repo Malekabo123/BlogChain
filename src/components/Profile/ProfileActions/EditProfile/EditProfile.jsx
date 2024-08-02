@@ -63,7 +63,7 @@ function EditProfile({ closeModal }) {
         false,
         true
       ));
-      updateDoc(docRef, updatedInfo);
+      await updateDoc(docRef, updatedInfo);
     };
     updateUserInfo();
     dispatch(isLoggedInActions.addUserInfo(updatedInfo));

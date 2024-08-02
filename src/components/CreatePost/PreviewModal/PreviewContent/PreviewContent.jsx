@@ -133,7 +133,7 @@ function PreviewContent({ formData, triggerPreview, isFullPost }) {
           false,
           true
         ));
-        updateDoc(docRef, formData);
+        await updateDoc(docRef, formData);
       } else {
         //if it's not being updated then it's being added for the 1st time
         const collectionRef = collection(db, "posts");
@@ -150,6 +150,8 @@ function PreviewContent({ formData, triggerPreview, isFullPost }) {
   };
 
   const clickLike = async () => {
+    setLoadingPage(true);
+
     //add user email to likes that belongs to this post
     const tt = updateDocDependencies.whoLikedThisPost.includes(
       userInfo.userInfo.email
@@ -162,7 +164,7 @@ function PreviewContent({ formData, triggerPreview, isFullPost }) {
           );
 
     //update the likes for this post
-    updateDoc(updateDocDependencies.docRefForPost, {
+    await updateDoc(updateDocDependencies.docRefForPost, {
       likes: addOrRemoveFromPost,
     });
 
@@ -176,7 +178,7 @@ function PreviewContent({ formData, triggerPreview, isFullPost }) {
           );
 
     //update the posts this user liked
-    updateDoc(updateDocDependencies.docRefForUser, {
+    await updateDoc(updateDocDependencies.docRefForUser, {
       likedPosts: addOrRemoveFromUser,
     });
 
@@ -188,6 +190,7 @@ function PreviewContent({ formData, triggerPreview, isFullPost }) {
     });
 
     setIsLiked((prev) => !prev);
+    setLoadingPage(false);
   };
 
   const updatePost = () => {
