@@ -10,7 +10,7 @@ A blog app developed using various techs:
 -Material UI
 -React Icons
 
-Here is the linl:
+Here is the link:
 https://blog-chain-abo.netlify.app/
 
 
